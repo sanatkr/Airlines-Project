@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		
+		<!-- Console Appender -->
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="time=%d{yyyy-MM-dd HH:mm:ss} | level=%p | thread=%t | logger=%c{1}.%M:%L | msg=%m%n" />
+
+		</Console>
+
+
+		<!--SplunkHttp Appender -->
+		<SplunkHttp 
+			name="splunkhttp" 
+			url="https://localhost:8088"
+			token="59dc003f-9804-4b50-8b69-f9d6734a92ea" 
+			host="localhost"
+			index="flight_api_logs" 
+			type="raw" 
+			source="http-event-logs"
+			sourcetype="log4j" 
+			messageFormat="text"
+			disableCertificateValidation="true">
+
+			<PatternLayout
+				pattern="{&quot;time&quot;:&quot;%d{yyyy-MM-dd HH:mm:ss}&quot;,
+              &quot;level&quot;:&quot;%p&quot;,
+              &quot;thread&quot;:&quot;%t&quot;,
+              &quot;logger&quot;:&quot;%c{1}.%M:%L&quot;,
+              &quot;msg&quot;:&quot;%m&quot;}" />
+
+		</SplunkHttp>
+		
+		<!-- INFO Rolling File Appender -->
+        <RollingFile name="InfoFileAppender"
+                     fileName="logs/info.log"
+                     filePattern="logs/info-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout
+				pattern="time=%d{yyyy-MM-dd HH:mm:ss} | level=%p | thread=%t | logger=%c{1}.%M:%L | msg=%m%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30"/>
+            <!-- Only log INFO and above (but not ERROR) -->
+            <Filters>
+                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </RollingFile>
+
+
+	</Appenders>
+
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="splunkhttp" />
+			<AppenderRef ref="InfoFileAppender"/>
+		</Root>
+	</Loggers>
+</Configuration>

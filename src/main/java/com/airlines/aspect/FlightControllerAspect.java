@@ -2,11 +2,16 @@ package com.airlines.aspect;
 
 import java.util.List;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,7 +21,7 @@ public class FlightControllerAspect {
 	private static final Logger logger = LoggerFactory.getLogger(FlightControllerAspect.class);
 	
 	@Around("execution(* com.airlines.controller.FlightController.addFlight(..))")
-    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object logAroundAddFlightMenthod(ProceedingJoinPoint joinPoint) throws Throwable {
         // Get method arguments
         Object[] args = joinPoint.getArgs();
 
@@ -42,6 +47,35 @@ public class FlightControllerAspect {
         }
 
         return result;
+    }
+	
+	
+	// Define a pointcut for the method getAllFlights() in FlightController
+    @Pointcut("execution(* com.airlines.controller.FlightController.getAllFlights(..))")
+    public void getAllFlightsPointcut() {}
+
+    // Before Advice
+    @Before("getAllFlightsPointcut()")
+    public void logBeforeFetchingFlights(JoinPoint joinPoint) {
+        logger.info("Fetching all flights - Method: {}", joinPoint.getSignature().getName());
+    }
+
+    // AfterReturning Advice
+    @AfterReturning(pointcut = "getAllFlightsPointcut()", returning = "result")
+    public void logAfterFetchingFlights(JoinPoint joinPoint, Object result) {
+        if (result instanceof ResponseEntity) {
+            ResponseEntity<?> response = (ResponseEntity<?>) result;
+            if (response.getBody() instanceof List) {
+                List<?> flights = (List<?>) response.getBody();
+                if (flights.isEmpty()) {
+                    logger.info("No Flights Found");
+                } else {
+                    logger.info("Found {} flight(s)", flights.size());
+                }
+            } else {
+                logger.info("Response without flight list returned.");
+            }
+        }
     }
 	
 	

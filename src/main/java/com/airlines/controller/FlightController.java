@@ -51,16 +51,16 @@ public class FlightController {
 		@GetMapping("/getDetails")
 		public ResponseEntity<List<Flight>> getAllFlights() {
 			
-			logger.info("Fetching all flights");
+			//logger.info("Fetching all flights");
 			
 		    List<Flight> flights = flightService.getAllFlights();
 
 		    if (flights.isEmpty()) {
-		    	logger.info("No Flights Found", flights.size());
+		    	//logger.info("No Flights Found", flights.size());
 		        return new ResponseEntity<List<Flight>>(HttpStatus.NO_CONTENT); 
 		    }
 
-		    logger.info("Found {} flight(s)", flights.size());
+		    //logger.info("Found {} flight(s)", flights.size());
 		    return new ResponseEntity<List<Flight>>(flights, HttpStatus.OK); 
 		}
 

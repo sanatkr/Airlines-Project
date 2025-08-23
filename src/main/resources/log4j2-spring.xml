@@ -37,7 +37,7 @@
                      fileName="logs/info.log"
                      filePattern="logs/info-%d{yyyy-MM-dd}-%i.log.gz">
             <PatternLayout
-				pattern="time=%d{yyyy-MM-dd HH:mm:ss} | level=%p | thread=%t | logger=%c{1}.%M:%L | msg=%m%n" />
+				pattern="time=%d{yyyy-MM-dd HH} | level=%p | thread=%t | logger=%c{1}.%M:%L | msg=%m%n" />
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
                 <SizeBasedTriggeringPolicy size="10MB"/>

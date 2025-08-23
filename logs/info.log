@@ -42,3 +42,46 @@ time=2025-08-23 22:21:16 | level=INFO | thread=http-nio-8080-exec-3 | logger=Fli
 time=2025-08-23 22:21:16 | level=INFO | thread=http-nio-8080-exec-3 | logger=FlightControllerAspect.logAroundAddFlightMenthod:44 | msg=FlightControllerAspect : Successfully added 7 flight(s)
 time=2025-08-23 22:21:55 | level=INFO | thread=http-nio-8080-exec-5 | logger=FlightController.getAllFlights:54 | msg=Fetching all flights
 time=2025-08-23 22:21:55 | level=INFO | thread=http-nio-8080-exec-5 | logger=FlightController.getAllFlights:63 | msg=Found 7 flight(s)
+time=2025-08-23 22:24:59 | level=INFO | thread=background-preinit | logger=Version.<clinit>:21 | msg=HV000001: Hibernate Validator 8.0.2.Final
+time=2025-08-23 22:24:59 | level=INFO | thread=restartedMain | logger=AirlinesManagementApplication.logStarting:53 | msg=Starting AirlinesManagementApplication using Java 23.0.1 with PID 29100 (C:\Users\sanat.a.kumar\eclipse-workspace\AirlinesManagement\target\classes started by sanat.a.kumar in C:\Users\sanat.a.kumar\eclipse-workspace\AirlinesManagement)
+time=2025-08-23 22:24:59 | level=INFO | thread=restartedMain | logger=AirlinesManagementApplication.logStartupProfileInfo:652 | msg=No active profile set, falling back to 1 default profile: "default"
+time=2025-08-23 22:24:59 | level=INFO | thread=restartedMain | logger=DevToolsPropertyDefaultsPostProcessor.logTo:252 | msg=Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+time=2025-08-23 22:24:59 | level=INFO | thread=restartedMain | logger=DevToolsPropertyDefaultsPostProcessor.logTo:252 | msg=For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+time=2025-08-23 22:25:00 | level=INFO | thread=restartedMain | logger=RepositoryConfigurationDelegate.registerRepositoriesIn:145 | msg=Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+time=2025-08-23 22:25:01 | level=INFO | thread=restartedMain | logger=RepositoryConfigurationDelegate.registerRepositoriesIn:213 | msg=Finished Spring Data repository scanning in 131 ms. Found 3 JPA repository interfaces.
+time=2025-08-23 22:25:02 | level=INFO | thread=restartedMain | logger=TomcatWebServer.initialize:111 | msg=Tomcat initialized with port 8080 (http)
+time=2025-08-23 22:25:02 | level=INFO | thread=restartedMain | logger=Http11NioProtocol.log:168 | msg=Initializing ProtocolHandler ["http-nio-8080"]
+time=2025-08-23 22:25:02 | level=INFO | thread=restartedMain | logger=StandardService.log:168 | msg=Starting service [Tomcat]
+time=2025-08-23 22:25:02 | level=INFO | thread=restartedMain | logger=StandardEngine.log:168 | msg=Starting Servlet engine: [Apache Tomcat/10.1.43]
+time=2025-08-23 22:25:03 | level=INFO | thread=restartedMain | logger=[/].log:168 | msg=Initializing Spring embedded WebApplicationContext
+time=2025-08-23 22:25:03 | level=INFO | thread=restartedMain | logger=ServletWebServerApplicationContext.prepareWebApplicationContext:301 | msg=Root WebApplicationContext: initialization completed in 3852 ms
+time=2025-08-23 22:25:03 | level=INFO | thread=restartedMain | logger=LogHelper.logPersistenceUnitInformation:31 | msg=HHH000204: Processing PersistenceUnitInfo [name: default]
+time=2025-08-23 22:25:03 | level=INFO | thread=restartedMain | logger=Version.logVersion:44 | msg=HHH000412: Hibernate ORM core version 6.6.22.Final
+time=2025-08-23 22:25:03 | level=INFO | thread=restartedMain | logger=RegionFactoryInitiator.initiateService:50 | msg=HHH000026: Second-level cache disabled
+time=2025-08-23 22:25:04 | level=INFO | thread=restartedMain | logger=SpringPersistenceUnitInfo.addTransformer:87 | msg=No LoadTimeWeaver setup: ignoring JPA class transformer
+time=2025-08-23 22:25:04 | level=INFO | thread=restartedMain | logger=HikariDataSource.getConnection:109 | msg=HikariPool-1 - Starting...
+time=2025-08-23 22:25:04 | level=INFO | thread=restartedMain | logger=HikariPool.checkFailFast:580 | msg=HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@28bc5749
+time=2025-08-23 22:25:04 | level=INFO | thread=restartedMain | logger=HikariDataSource.getConnection:122 | msg=HikariPool-1 - Start completed.
+time=2025-08-23 22:25:05 | level=INFO | thread=restartedMain | logger=pooling.logConnectionInfo:163 | msg=HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+time=2025-08-23 22:25:06 | level=INFO | thread=restartedMain | logger=JtaPlatformInitiator.initiateService:59 | msg=HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+time=2025-08-23 22:25:07 | level=INFO | thread=restartedMain | logger=LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:447 | msg=Initialized JPA EntityManagerFactory for persistence unit 'default'
+time=2025-08-23 22:25:07 | level=INFO | thread=restartedMain | logger=QueryEnhancerFactory.<clinit>:49 | msg=Hibernate is in classpath; If applicable, HQL parser will be used.
+time=2025-08-23 22:25:09 | level=WARN | thread=restartedMain | logger=JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:258 | msg=spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+time=2025-08-23 22:25:09 | level=INFO | thread=restartedMain | logger=OptionalLiveReloadServer.startServer:59 | msg=LiveReload server is running on port 35729
+time=2025-08-23 22:25:10 | level=INFO | thread=restartedMain | logger=Http11NioProtocol.log:168 | msg=Starting ProtocolHandler ["http-nio-8080"]
+time=2025-08-23 22:25:10 | level=INFO | thread=restartedMain | logger=TomcatWebServer.start:243 | msg=Tomcat started on port 8080 (http) with context path '/'
+time=2025-08-23 22:25:10 | level=INFO | thread=restartedMain | logger=AirlinesManagementApplication.logStarted:59 | msg=Started AirlinesManagementApplication in 12.271 seconds (process running for 13.739)
+time=2025-08-23 22:25:22 | level=INFO | thread=http-nio-8080-exec-2 | logger=[/].log:168 | msg=Initializing Spring DispatcherServlet 'dispatcherServlet'
+time=2025-08-23 22:25:22 | level=INFO | thread=http-nio-8080-exec-2 | logger=DispatcherServlet.initServletBean:532 | msg=Initializing Servlet 'dispatcherServlet'
+time=2025-08-23 22:25:22 | level=INFO | thread=http-nio-8080-exec-2 | logger=DispatcherServlet.initServletBean:554 | msg=Completed initialization in 1 ms
+time=2025-08-23 22:25:23 | level=INFO | thread=http-nio-8080-exec-2 | logger=FlightControllerAspect.logAroundAddFlightMenthod:31 | msg=FlightControllerAspect : Received request to add 7 flight(s)
+time=2025-08-23 22:25:23 | level=INFO | thread=http-nio-8080-exec-2 | logger=FlightControllerAspect.logAroundAddFlightMenthod:44 | msg=FlightControllerAspect : Successfully added 7 flight(s)
+time=2025-08-23 22:25:28 | level=INFO | thread=http-nio-8080-exec-3 | logger=FlightControllerAspect.logBeforeFetchingFlights:60 | msg=Fetching all flights - Method: getAllFlights
+time=2025-08-23 22:25:28 | level=INFO | thread=http-nio-8080-exec-3 | logger=FlightControllerAspect.logAfterFetchingFlights:73 | msg=Found 7 flight(s)

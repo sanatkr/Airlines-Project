@@ -31,7 +31,8 @@ public class FlightService {
     }
 
     
-    public List<Flight> addFlight(List<FlightDTO> flightDTO) {
+    public List<Flight> addFlight(List<FlightDTO> flightDTO) 
+    {
         
     	
     	List<Flight> flights = new ArrayList<>();

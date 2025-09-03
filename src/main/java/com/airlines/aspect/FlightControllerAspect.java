@@ -54,12 +54,14 @@ public class FlightControllerAspect {
     @Pointcut("execution(* com.airlines.controller.FlightController.getAllFlights(..))")
     public void getAllFlightsPointcut() {}
 
+    
     // Before Advice
     @Before("getAllFlightsPointcut()")
     public void logBeforeFetchingFlights(JoinPoint joinPoint) {
         logger.info("Fetching all flights - Method: {}", joinPoint.getSignature().getName());
     }
 
+    
     // AfterReturning Advice
     @AfterReturning(pointcut = "getAllFlightsPointcut()", returning = "result")
     public void logAfterFetchingFlights(JoinPoint joinPoint, Object result) {

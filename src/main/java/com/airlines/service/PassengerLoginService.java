@@ -23,7 +23,13 @@ public class PassengerLoginService implements UserDetailsService{
 		
 		Passenger passenger = passengerRepository.findByEmail(passengerEmail);
 		
-		return new User(passenger.getEmail(), passenger.getPwd(), Collections.emptyList());
+		return User.builder()
+                .username(passenger.getEmail())
+                .password(passenger.getPwd())
+                .roles(passenger.getRole()) // "USER" or "ADMIN"
+                .build();
+		
+		//return new User(passenger.getEmail(), passenger.getPwd(), Collections.emptyList());
 
 	}
 

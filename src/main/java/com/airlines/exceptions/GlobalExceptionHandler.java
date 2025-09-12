@@ -91,12 +91,13 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
 	}
 
-	@ExceptionHandler(BadCredentialsException.class)
-	public ResponseEntity<Map<String, String>> handleBadCredentials(BadCredentialsException ex) {
-		Map<String, String> response = new HashMap<>();
-		response.put("error", "Invalid username or password");
-		return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
-	}	
+//	@ExceptionHandler(BadCredentialsException.class)
+//	public ResponseEntity<Map<String, String>> handleBadCredentials(BadCredentialsException ex) {
+//		Map<String, String> response = new HashMap<>();
+//		response.put("error", "Invalid username or password");
+//		response.put("status", "ERROR");
+//		return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+//	}	
 
 	// Handle all other unexpected exceptions
 	@ExceptionHandler(Exception.class)

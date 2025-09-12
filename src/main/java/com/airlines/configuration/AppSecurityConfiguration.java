@@ -73,6 +73,8 @@ public class AppSecurityConfiguration {
 	    .csrf(csrf -> csrf.disable())
 	    .authorizeHttpRequests(auth -> auth
 	        .requestMatchers("/api/flights/jwt/register", "/api/flights/jwt/login").permitAll()
+	        .requestMatchers("/api/flights/jwt/checkuser").hasRole("USER")   // only users
+            .requestMatchers("/api/flights/jwt/checkadmin").hasRole("ADMIN")     // only admins
 	        .anyRequest().authenticated()
 	    )
 	    .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // No sessions

@@ -33,8 +33,16 @@ public class Passenger {
     private String passportNumber;
     private String nationality;
     
+    private String role;
     
     
+    
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -99,9 +107,7 @@ public class Passenger {
 	public String toString() {
 		return "Passenger [id=" + id + ", name=" + name + ", email=" + email + ", pwd=" + pwd + ", phoneNumber="
 				+ phoneNumber + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + ", address=" + address
-				+ ", passportNumber=" + passportNumber + ", nationality=" + nationality + "]";
+				+ ", passportNumber=" + passportNumber + ", nationality=" + nationality + ", role=" + role + "]";
 	}
-	
-	
 
 }
